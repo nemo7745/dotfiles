@@ -1,0 +1,12 @@
+set autoindent
+set backspace=eol,indent,start
+set expandtab
+set hlsearch
+set ignorecase
+set incsearch
+set laststatus=2
+set number
+set smartcase
+set smartindent
+set wrapscan
+syntax on

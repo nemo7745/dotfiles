@@ -1,0 +1,33 @@
+{
+    "layer": "top",
+    "spacing": 8,
+    "modules-left": ["clock","mpris","hyprland/submap"],
+    "modules-center": ["hyprland/workspaces"],
+    "modules-right": ["privacy","tray","battery","pulseaudio"],
+    "clock": {
+        "format": "{:%T}",
+        "format-alt": "{:%F}",
+        "interval": 1,
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "mpris": {
+        "format": "{player_icon} <b>{dynamic}</b>",
+        "format-paused": "{status_icon} <b>{dynamic}</b>",
+        "format-stopped": "{status_icon} </b>{dynamic}</b>",
+        "dynamic-len": 48,
+        "player-icons": {"firefox": ""},
+        "status-icons": {"paused": "","stopped": ""}
+    },
+    "hyprland/submap":{"format": " <b>{}</b>", "tooltip": false},
+    "hyprland/workspaces": {"persistent-workspaces": {"1": [],"2": [],"3": [],"4": [],"5": [],"6": [],"7": [],"8": [],"9": [],"10": []}},
+    "privacy": {"modules": [{"type": "screenshare"},{"type": "audio-in"}]},
+    "tray": {"spacing": 10},
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-bluetooth": "{icon}",
+        "format-bluetooth-muted": "",
+        "format-muted": "",
+        "format-icons": {"default": ["","",""]},
+        "on-click": "pavucontrol"
+    }
+}
