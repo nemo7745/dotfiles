@@ -44,6 +44,7 @@
   environment.systemPackages = with pkgs; [
     bitwarden
     bluez-tools
+    brightnessctl
     discord
     easyeffects
     firefox
@@ -56,15 +57,18 @@
     networkmanagerapplet
     opensnitch-ui
     pavucontrol
+    playerctl
     qt6Packages.qt6ct
     qt6Packages.qt6gtk2
     spotify
     syncthing
+    tor-browser
     veracrypt
     vivaldi
     vlc
     vscodium
     wofi
+    xarchiver
     xdg-desktop-portal-hyprland
     xdg-user-dirs
     xdg-utils

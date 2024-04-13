@@ -6,6 +6,6 @@
     initialPassword = "CHANGE_IT";
     home = "/home/nemo";
     shell = pkgs.zsh;
-    extraGroups = [ "wheel" "networkmanager" ];
+    extraGroups = [ "wheel" "networkmanager" "tor" ];
   };
 }
