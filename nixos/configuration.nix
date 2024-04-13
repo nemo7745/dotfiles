@@ -78,6 +78,7 @@
     nyx
     vim
     wireless-regdb
+    zsh-completions
   ];
   system.stateVersion = "23.11";
 }
