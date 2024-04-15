@@ -10,6 +10,7 @@
       editor = false;
     };
   };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   systemd.oomd.enable = false;
   security.doas = {
     enable = true;
