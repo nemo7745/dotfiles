@@ -67,6 +67,7 @@
     mako
     networkmanagerapplet
     opensnitch-ui
+    papirus-icon-theme
     pavucontrol
     playerctl
     qt6Packages.qt6ct
