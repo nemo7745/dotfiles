@@ -10,6 +10,7 @@
       editor = false;
     };
   };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   systemd.oomd.enable = false;
   security.doas = {

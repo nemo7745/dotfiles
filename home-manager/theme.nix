@@ -3,8 +3,8 @@
 {
   home = {
     file = {
-    ".local/share/icons/Papirus" = {
-      source = "${pkgs.papirus-icon-theme}/share/icons/Papirus";
+      ".local/share/icons/Papirus" = {
+        source = "${pkgs.papirus-icon-theme}/share/icons/Papirus";
       };
     };
   };

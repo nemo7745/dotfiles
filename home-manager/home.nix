@@ -3,8 +3,10 @@
 {
   imports = [
     ./hyprland.nix
-    ./waybar.nix
+    ./mako.nix
     ./theme.nix
+    ./waybar.nix
+    ./wofi.nix
   ];
   # Home Manager needs a bit of information about you and the paths it should
   # manage.

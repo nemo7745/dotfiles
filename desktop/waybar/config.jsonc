@@ -1,33 +1,85 @@
-{
-    "layer": "top",
-    "spacing": 8,
-    "modules-left": ["clock","mpris","hyprland/submap"],
-    "modules-center": ["hyprland/workspaces"],
-    "modules-right": ["privacy","tray","battery","pulseaudio"],
+[
+  {
     "clock": {
-        "format": "{:%T}",
-        "format-alt": "{:%F}",
-        "interval": 1,
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+      "format": "{:%T}",
+      "format-alt": "{:%F}",
+      "interval": 1,
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
     },
+    "hyprland/submap": {
+      "format": " <b>{}</b>",
+      "tooltop": false
+    },
+    "hyprland/workspaces": {
+      "persistent-workspaces": {
+        "1": [],
+        "10": [],
+        "2": [],
+        "3": [],
+        "4": [],
+        "5": [],
+        "6": [],
+        "7": [],
+        "8": [],
+        "9": []
+      }
+    },
+    "layer": "top",
+    "modules-center": [
+      "hyprland/workspaces"
+    ],
+    "modules-left": [
+      "clock",
+      "mpris",
+      "hyprland/submap"
+    ],
+    "modules-right": [
+      "privacy",
+      "tray",
+      "battery",
+      "pulseaudio"
+    ],
     "mpris": {
-        "format": "{player_icon} <b>{dynamic}</b>",
-        "format-paused": "{status_icon} <b>{dynamic}</b>",
-        "format-stopped": "{status_icon} </b>{dynamic}</b>",
-        "dynamic-len": 48,
-        "player-icons": {"firefox": ""},
-        "status-icons": {"paused": "","stopped": ""}
+      "dynamic-len": 64,
+      "format": "{player_icon} <b>{dynamic}</b>",
+      "format-paused": "{status_icon} <b>{dynamic}</b>",
+      "format-stopped": "{status_icon} </b>{dynamic}</b>",
+      "player-icons": {
+        "default": "",
+        "firefox": ""
+      },
+      "status-icons": {
+        "paused": "",
+        "stopped": ""
+      }
     },
-    "hyprland/submap":{"format": " <b>{}</b>", "tooltip": false},
-    "hyprland/workspaces": {"persistent-workspaces": {"1": [],"2": [],"3": [],"4": [],"5": [],"6": [],"7": [],"8": [],"9": [],"10": []}},
-    "privacy": {"modules": [{"type": "screenshare"},{"type": "audio-in"}]},
-    "tray": {"spacing": 10},
+    "privacy": {
+      "modules": [
+        {
+          "type": "screenshare"
+        },
+        {
+          "type": "audio-in"
+        }
+      ]
+    },
     "pulseaudio": {
-        "format": "{icon}",
-        "format-bluetooth": "{icon}",
-        "format-bluetooth-muted": "",
-        "format-muted": "",
-        "format-icons": {"default": ["","",""]},
-        "on-click": "pavucontrol"
+      "format": "{icon}",
+      "format-bluetooth": "{icon}",
+      "format-bluetooth-muted": "",
+      "format-icons": {
+        "default": [
+          "",
+          "",
+          ""
+        ]
+      },
+      "format-muted": "",
+      "on-click": "/nix/store/003ywr558rr07vpg1gdkz7r097caq2qj-pavucontrol-5.0/bin/pavucontrol"
+    },
+    "spacing": 8,
+    "tray": {
+      "spacing": 10
     }
-}
+  }
+]
