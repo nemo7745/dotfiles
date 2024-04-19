@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =[ ./hardware-configuration.nix ./users.nix ./desktop.nix ];
+  imports =[ ./hardware-configuration.nix ./users.nix ];
   boot.loader = {
     timeout = 0;
     efi.canTouchEfiVariables = true;
