@@ -1,4 +1,4 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
   services.mako = {
@@ -9,7 +9,7 @@
     borderSize = 0;
     borderRadius = 8;
     defaultTimeout = 10000;
-    iconPath = "$HOME/.local/share/icons/Papirus";
+    iconPath = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
     extraConfig =
       ''
       on-button-right=exec makoctl menu -n "$id" wofi -d && makoctl dismiss -n "$id"

@@ -1,15 +1,20 @@
 { config, pkgs, ... }:
 
 {
-  home = {
-    file = {
-      ".local/share/icons/Papirus" = {
-        source = "${pkgs.papirus-icon-theme}/share/icons/Papirus";
-      };
-    };
-  };
   gtk = {
     enable = true;
-    iconTheme.name = "Papirus";
+    cursorTheme = {
+      package = pkgs.capitaine-cursors;
+      name = "capitaine-cursors-white";
+      size = 24;
+    };
+    iconTheme = {
+      package = pkgs.papirus-icon-theme;
+      name = "Papirus-Dark";
+    };
+    theme = {
+      package = pkgs.materia-theme;
+      name = "Materia-dark-compact";
+    };
   };
 }

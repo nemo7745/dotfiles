@@ -12,7 +12,6 @@
   };
   boot.kernelPackages = pkgs.linuxPackages_latest;
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  systemd.oomd.enable = false;
   security.doas = {
     enable = true;
     extraRules = [ { groups = [ "wheel" ]; persist = true; keepEnv = true; } ];
@@ -21,10 +20,7 @@
   time.timeZone = "Asia/Tokyo";
   networking.networkmanager.enable = true;
   networking.hostName = "nixos";
-  services.resolved = {
-    enable = true;
-    llmnr = "false";
-  };
+  services.resolved.enable = true;
   services.timesyncd = {
     enable = true;
     servers = [ "ntp.jst.mfeed.ad.jp" "ntp1.v6.mfeed.ad.jp" "ntp2.v6.mfeed.ad.jp" "ntp3.v6.mfeed.ad.jp" ];
@@ -52,10 +48,6 @@
           }
         }
       '';
-    extraDeletions =
-      ''
-        table inet mangle;
-      '';
   };
   services.tor = {
     enable = false;
@@ -76,11 +68,13 @@
   programs.zsh.enable = true;
   programs.git.enable = true;
   environment.systemPackages = with pkgs; [
-    obfs4
+    gnupg
     nyx
+    obfs4
+    pinentry
     vim
     wireless-regdb
     zsh-completions
   ];
-  system.stateVersion = "23.11";
+  system.stateVersion = "24.11";
 }

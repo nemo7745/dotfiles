@@ -8,6 +8,10 @@
       "$mod" = "SUPER";
       "$fileManager" = "thunar";
       "$launcher" = "wofi --show drun";
+      env = [ 
+        "XCURSOR_THEME,capitaine-cursors-white"
+        "XCURSOR_SIZE,24"
+      ];
       monitor = [
         ",preferred,auto,auto"
       ];
@@ -18,7 +22,6 @@
         "waybar"
         "mako"
         "thunar --daemon"
-        "opensnitch-ui"
         "nm-applet"
         "blueman-applet"
         "fcitx5"
@@ -35,11 +38,11 @@
         };
       };
       general = {
-        border_size = 2;
+        border_size = 1;
         gaps_in = 0;
-        gaps_out = 4;
-        "col.inactive_border" = "rgba(505050ff)";
-        "col.active_border" = "rgba(903cf5ff)";
+        gaps_out = 0;
+        "col.inactive_border" = "rgba(404040ff)";
+        "col.active_border" = "rgba(606060ff)";
         layout = "dwindle";
         allow_tearing = false;
       };
@@ -48,7 +51,7 @@
         workspace_swipe_fingers = 4;
       };
       decoration = {
-        rounding = 8;
+        rounding = 0;
         drop_shadow = false;
         blur.enabled = false;
         };

@@ -7,10 +7,10 @@
     settings = {
       mainBar = {
         layer = "top";
-        spacing = 8;
-        modules-left = [ "clock" "mpris" "hyprland/submap" ];
+        spacing = 0;
+        modules-left = [ "mpris" "hyprland/submap" ];
         modules-center = [ "hyprland/workspaces" ];
-        modules-right = [ "privacy" "tray" "battery" "pulseaudio" ];
+        modules-right = [ "tray" "battery" "pulseaudio" "privacy" "clock" ];
         clock = {
           format = "{:%T}";
           format-alt = "{:%F}";
@@ -51,7 +51,7 @@
           { type = "screenshare"; }
           { type = "audio-in"; }
         ];
-        tray.spacing = 10;
+        tray.spacing = 8;
         pulseaudio = {
           format = "{icon}";
           format-bluetooth = "{icon}";
@@ -69,22 +69,22 @@
       font-size: 13px;
     }
     window#waybar {background-color: #303030; border-radius: 0 0 16px 16px;}
-    #clock, #mpris, #submap, #workspaces, #privacy-item, #tray, #pulseaudio {
-      color: #f0f0f0;
-      background-color: #903cf5;
-      margin: 4px 0;
-      border-radius: 16px;
-      padding: 2px 10px;
+    #clock, #mpris, #submap, #workspaces, #privacy-item, #tray, #pulseaudio, #battery {
+    color: #f0f0f0;
+    background-color: #404040;
+    margin: 4px 0;
     }
-    #clock, #mpris, #battery {color: #290056; background-color: #d57bff;}
-    #privacy-item {background-color: #9a1818}
-    #clock {margin-left: 10px; font-weight: bolder;}
-    #pulseaudio {margin-right: 10px;}
-    #workspaces {padding: 2px 4px;}
-    #workspaces button {color: #f0f0f0; border-radius: 16px; padding: 0 1px; margin: 2px;}
-    #workspaces button.active {background-color: #d57bff;}
-    #workspaces button.empty {color: #a0a0a0;}
-    #workspaces button.visible {color: #290056; font-weight: bolder;}
+    #tray {padding: 2px 4px 2px 10px; border-radius: 16px 0 0 16px;}
+    #pulseaudio {padding: 2px 4px;}
+    #privacy-item {color: red; padding: 2px 4px;}
+    #clock {margin-right: 8px; font-weight: bolder; border-radius: 0 16px 16px 0; padding: 2px 10px 2px 4px;}
+    #mpris {margin-left: 8px; border-radius: 16px; padding: 2px 10px;}
+    #submap {border-radius: 16px; padding: 2px 10px; font-weight: bolder;}
+    #workspaces {padding: 2px 8px; border-radius: 16px;}
+    #workspaces button {color: #f0f0f0; border-radius: 16px; padding: 0 1px; margin: 0 2px;}
+    #workspaces button.active {background-color: #606060;}
+    #workspaces button.empty {color: #303030; padding: 0 4px;}
+    #workspaces button.visible {color: #f0f0f0; font-weight: bolder; padding: 0 4px;}
     '';
   };
 }

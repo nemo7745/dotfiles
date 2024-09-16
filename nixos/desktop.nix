@@ -5,7 +5,6 @@
   services.blueman.enable = true;
   security.polkit.enable = true;
   services.gnome.gnome-keyring.enable = true;
-  services.opensnitch.enable = true;
   services.gvfs.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
@@ -28,20 +27,14 @@
     noto-fonts-monochrome-emoji
   ];
   i18n.inputMethod = {
-    enabled = "fcitx5";
-    fcitx5.addons = with pkgs; [ fcitx5-with-addons fcitx5-mozc ];
-  };
-  services.dnscrypt-proxy2 = {
     enable = true;
-    settings = {
-      server_names = [ "cloudflare" "cloudflare-ipv6" ];
-      listen_addresses = [ "[::1]:53" "127.0.0.1:53" ];
-      ipv6_servers = true;
-      bootstrap_resolvers = [ "1.1.1.1:53" ];
-      cache = false;
+    type = "fcitx5";
+    fcitx5 = {
+      waylandFrontend = true;
+      addons = [ pkgs.fcitx5-mozc ];
     };
   };
-  xdg.portal.extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
   programs.hyprland = {
     enable = true;
     xwayland.enable = true;
@@ -49,16 +42,18 @@
   programs.waybar.enable = true;
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [ thunar-volman thunar-archive-plugin thunar-media-tags-plugin ];
+    plugins = with pkgs.xfce; [ thunar-volman thunar-archive-plugin ];
   };
+  programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
     bitwarden
     bluez-tools
     brightnessctl
+    cryptomator
     discord
     easyeffects
     firefox
-    gnome.seahorse
+    gamescope
     hyprpaper
     keepassxc
     kitty
@@ -66,17 +61,16 @@
     libnotify
     mako
     networkmanagerapplet
-    opensnitch-ui
     papirus-icon-theme
     pavucontrol
     playerctl
     qt6Packages.qt6ct
     qt6Packages.qt6gtk2
+    seahorse
     spotify
     syncthing
     tor-browser
     veracrypt
-    vivaldi
     vlc
     vscodium
     wofi
@@ -90,7 +84,9 @@
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"
     "spotify"
+    "steam"
+    "steam-original"
+    "steam-run"
     "veracrypt"
-    "vivaldi"
   ];
 }
