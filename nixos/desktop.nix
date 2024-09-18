@@ -54,17 +54,19 @@
     easyeffects
     firefox
     gamescope
+    hypridle
+    hyprlock
     hyprpaper
     keepassxc
     kitty
     libsForQt5.polkit-kde-agent
     libnotify
     mako
+    mangohud
     networkmanagerapplet
     papirus-icon-theme
     pavucontrol
     playerctl
-    qt6Packages.qt6ct
     qt6Packages.qt6gtk2
     seahorse
     spotify
