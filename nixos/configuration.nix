@@ -2,21 +2,13 @@
 
 {
   imports =[ ./hardware-configuration.nix ./users.nix ];
-  boot.loader = {
-    timeout = 0;
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      editor = false;
-    };
-  };
-  boot.kernelPackages = pkgs.linuxPackages_latest;
+  system.stateVersion = "24.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   security.doas = {
     enable = true;
     extraRules = [ { groups = [ "wheel" ]; persist = true; keepEnv = true; } ];
   };
-  i18n.defaultLocale = "en_US.UTF-8";
+  i18n.defaultLocale = "en_GB.UTF-8";
   time.timeZone = "Asia/Tokyo";
   networking.networkmanager.enable = true;
   networking.hostName = "nixos";
@@ -64,11 +56,12 @@
       ];
     };
   };
-  virtualisation.podman.enable = false;
+  virtualisation.podman.enable = true;
   programs.zsh.enable = true;
   programs.git.enable = true;
   environment.systemPackages = with pkgs; [
     gnupg
+    ldns
     nyx
     obfs4
     pinentry
@@ -76,5 +69,4 @@
     wireless-regdb
     zsh-completions
   ];
-  system.stateVersion = "24.11";
 }
