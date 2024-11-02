@@ -31,6 +31,7 @@
             ct state established,related accept
             ct state invalid drop
             icmpv6 type { nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
+            udp dport 5353 accept
           }
           chain forward {
             type filter hook forward priority filter; policy drop;
@@ -64,7 +65,7 @@
     ldns
     nyx
     obfs4
-    pinentry
+    pinentry-tty
     vim
     wireless-regdb
     zsh-completions

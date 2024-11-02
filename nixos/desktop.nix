@@ -42,7 +42,7 @@
   programs.waybar.enable = true;
   programs.thunar = {
     enable = true;
-    plugins = with pkgs.xfce; [ thunar-volman thunar-archive-plugin ];
+    plugins = with pkgs.xfce; [ thunar-volman tumbler thunar-archive-plugin ];
   };
   programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
@@ -81,7 +81,6 @@
     xdg-user-dirs
     xdg-utils
     xfce.ristretto
-    xfce.tumbler
     ];
   nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
     "discord"

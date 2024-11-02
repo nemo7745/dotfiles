@@ -4,6 +4,7 @@
   imports = [
     ./dotfiles.nix
     ./git.nix
+    ./gpg-agent.nix
     ./hypridle.nix
     ./hyprlock.nix
     ./hyprland.nix
