@@ -1,4 +1,4 @@
-{ config, pkgs, lib, ... }:
+{ config, pkgs, ... }:
 
 {
   hardware.bluetooth.enable = true;
@@ -81,13 +81,5 @@
     xdg-user-dirs
     xdg-utils
     xfce.ristretto
-    ];
-  nixpkgs.config.allowUnfreePredicate = pkg: builtins.elem (lib.getName pkg) [
-    "discord"
-    "spotify"
-    "steam"
-    "steam-original"
-    "steam-run"
-    "veracrypt"
   ];
 }

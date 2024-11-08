@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 {
-  imports =[ ./hardware-configuration.nix ./users.nix ];
+  imports = [ ./hardware-configuration.nix ];
   system.stateVersion = "24.11";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   security.doas = {
@@ -42,6 +42,13 @@
         }
       '';
   };
+    users.users.nemo = {
+    isNormalUser = true;
+    initialPassword = "CHANGE_IT";
+    home = "/home/nemo";
+    shell = pkgs.zsh;
+    extraGroups = [ "wheel" "networkmanager" "tor" ];
+  };
   services.tor = {
     enable = false;
     settings = {
@@ -57,6 +64,7 @@
       ];
     };
   };
+  nixpkgs.config.allowUnfree = true;
   virtualisation.podman.enable = true;
   programs.zsh.enable = true;
   programs.git.enable = true;

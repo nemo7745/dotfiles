@@ -3,27 +3,35 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
-  outputs = { nixpkgs, home-manager, ... }:
+  outputs = { nixpkgs, nixos-wsl, home-manager, ... }:
   let
     system = "x86_64-linux";
     pkgs = nixpkgs.legacyPackages.${system};
   in
   {
-    nixosConfigurations."nixos-core" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."cli" = nixpkgs.lib.nixosSystem {
       modules = [ ./nixos/configuration.nix ];
     };
-    nixosConfigurations."nixos-desktop" = nixpkgs.lib.nixosSystem {
+    nixosConfigurations."desktop" = nixpkgs.lib.nixosSystem {
       modules = [ ./nixos/configuration.nix ./nixos/desktop.nix ];
     };
-    homeConfigurations."home-manager" = home-manager.lib.homeManagerConfiguration {
+        nixosConfigurations."wsl2" = nixpkgs.lib.nixosSystem {
+      modules = [ nixos-wsl.nixosModules.default ./nixos/wsl2.nix ];
+    };
+    homeConfigurations."cli" = home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [ ./home-manager/home.nix ];
+      modules = [ ./home-manager/cli.nix ];
+    };
+    homeConfigurations."desktop" = home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [ ./home-manager/cli.nix ./home-manager/desktop.nix ];
     };
   };
 }

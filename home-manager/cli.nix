@@ -1,6 +1,11 @@
-{ config, ... }:
+{ config, pkgs, ... }:
 
 {
+  imports = [ ./configuration.nix ./dotfiles.nix ];
+  services.gpg-agent = {
+    enable = true;
+    pinentryPackage = pkgs.pinentry-tty;
+  };
   programs.git = {
     enable = true;
     userName = "nemo7745";
