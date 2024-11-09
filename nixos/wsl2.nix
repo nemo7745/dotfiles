@@ -27,6 +27,7 @@
   environment.systemPackages = with pkgs; [
     gnupg
     ldns
+    nixd
     pinentry-tty
     podman-compose
     vim

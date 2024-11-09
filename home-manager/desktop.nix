@@ -137,7 +137,7 @@
       };
       listener = [
         {
-          on-resume = "hyprctl dispatch dpms on"
+          on-resume = "hyprctl dispatch dpms on";
           on-timeout = "hyprctl dispatch dpms off";
           timeout = 600;
         }
@@ -229,10 +229,10 @@
     settings = {
       splash = false;
       preload = [
-        "/home/nemo/Pictures/wallpaper/01.jpg"
+        "/home/nemo/Pictures/wallpaper/01.png"
       ];
       wallpaper = [
-        ",/home/nemo/Pictures/wallpaper/01.jpg"
+        ",/home/nemo/Pictures/wallpaper/01.png"
       ];
     };
   };
