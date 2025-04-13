@@ -3,7 +3,7 @@
 {
   home.username = "nemo";
   home.homeDirectory = "/home/nemo";
-  home.stateVersion = "24.11";
+  home.stateVersion = "25.05";
   home.sessionVariables = {
     # EDITOR = "emacs";
   };

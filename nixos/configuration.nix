@@ -2,7 +2,7 @@
 
 {
   imports = [ ./hardware-configuration.nix ];
-  system.stateVersion = "24.11";
+  system.stateVersion = "25.05";
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   security.doas = {
     enable = true;
@@ -74,6 +74,7 @@
     nyx
     obfs4
     pinentry-tty
+    sbctl
     vim
     wireless-regdb
     zsh-completions

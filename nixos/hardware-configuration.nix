@@ -12,11 +12,15 @@
     graphics.extraPackages = [];
   };
   boot = {
+    lanzaboote = {
+      enable = true;
+      pkiBundle = "/var/lib/sbctl";
+    };
     loader = {
       timeout = 0;
       efi.canTouchEfiVariables = true;
       systemd-boot = {
-        enable = true;
+        enable = lib.mkForce false;
         editor = false;
       };
     };

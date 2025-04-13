@@ -52,8 +52,8 @@
       };
       decoration = {
         rounding = 0;
-        drop_shadow = false;
         blur.enabled = false;
+        shadow.enabled = false;
         };
       animations.enabled = true;
       misc = {
@@ -105,10 +105,10 @@
         "ALT,8,${mws},8"
         "ALT,9,${mws},9"
         "ALT,0,${mws},10"
-        ",${xbri}Up,${bctl} s +3%"
-        ",${xbri}Down,${bctl} s 3%-"
-        ",${xbkl}Up,${bctl} -d *kbd_backlight s +3%"
-        ",${xbkl}Down,${bctl} -d *kbd_backlight s 3%-"
+        ",${xbri}Up,${bctl} s +1%"
+        ",${xbri}Down,${bctl} s 1%-"
+        ",${xbkl}Up,${bctl} -d *kbd_backlight s +1%"
+        ",${xbkl}Down,${bctl} -d *kbd_backlight s 1%-"
         ",${xaud}Play,${pctl} play-pause"
         ",${xaud}Pause,${pctl} play-pause"
         ",${xaud}Next,${pctl} next"
@@ -142,7 +142,7 @@
           timeout = 600;
         }
         {
-          on-resume = "hyprctl dispatch dpms on";
+          on-resume = "hyprctl dispatch dpms on && brightnessctl s 1 && brightnessctl -d *kbd_backlight s 1";
           on-timeout = "loginctl lock-session";
           timeout = 660;
         }
@@ -303,7 +303,7 @@
       font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
       font-size: 13px;
     }
-    window#waybar {background-color: #303030; border-radius: 0 0 16px 16px;}
+    window#waybar {background-color: #303030;}
     #clock, #mpris, #submap, #workspaces, #privacy-item, #tray, #pulseaudio, #battery {
     color: #f0f0f0;
     background-color: #404040;
