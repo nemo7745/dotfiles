@@ -28,7 +28,9 @@
     gnupg
     ldns
     nixd
+    nodejs
     pinentry-tty
+    pnpm
     podman-compose
     vim
     wget

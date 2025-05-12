@@ -52,7 +52,7 @@
     cryptomator
     discord
     easyeffects
-    firefox
+    firefox-devedition
     gamescope
     hypridle
     hyprlock
@@ -64,7 +64,6 @@
     mako
     mangohud
     networkmanagerapplet
-    papirus-icon-theme
     pavucontrol
     playerctl
     qt6Packages.qt6gtk2

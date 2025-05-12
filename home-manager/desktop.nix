@@ -343,17 +343,16 @@
   };
   services.mako = {
     enable = true;
-    backgroundColor = "#404040ff";
-    textColor = "#f0f0f0ff";
-    height = 500;
-    borderSize = 0;
-    borderRadius = 8;
-    defaultTimeout = 10000;
-    iconPath = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
-    extraConfig =
-      ''
-      on-button-right=exec makoctl menu -n "$id" wofi -d && makoctl dismiss -n "$id"
-      '';
+    settings = {
+      background-color = "#404040ff";
+      text-color = "#f0f0f0ff";
+      height = 500;
+      border-size = 0;
+      border-radius = 8;
+      default-timeout = 10000;
+      icon-path = "${pkgs.papirus-icon-theme}/share/icons/Papirus-Dark";
+      on-button-right = "exec makoctl menu -n $id -- wofi -d && makoctl dismiss -n $id";
+    };
   };
   gtk = {
     enable = true;
