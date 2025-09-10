@@ -57,9 +57,9 @@
     hypridle
     hyprlock
     hyprpaper
+    hyprpolkitagent
     keepassxc
     kitty
-    libsForQt5.polkit-kde-agent
     libnotify
     mako
     mangohud

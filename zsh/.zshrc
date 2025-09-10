@@ -11,3 +11,4 @@ setopt correct
 PROMPT="[%n@%m]%#"
 RPROMPT="[%d]"
 SPROMPT="%{%}%{$suggest%}%B%r%b%{%}?[nyae]"
+export GPG_TTY=$(tty)

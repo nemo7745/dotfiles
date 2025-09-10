@@ -31,7 +31,10 @@
             ct state established,related accept
             ct state invalid drop
             icmpv6 type { nd-router-solicit, nd-router-advert, nd-neighbor-solicit, nd-neighbor-advert } accept
-            udp dport 5353 accept
+            ip6 saddr fe80::/10 udp dport 5353 accept
+            ip saddr 10.0.0.0/8 udp dport 5353 accept
+            ip saddr 172.16.0.0/12 udp dport 5353 accept
+            ip saddr  192.168.0.0/16 udp dport 5353 accept
           }
           chain forward {
             type filter hook forward priority filter; policy drop;

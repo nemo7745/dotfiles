@@ -16,7 +16,7 @@
         ",preferred,auto,auto"
       ];
       exec-once = [
-        "${pkgs.libsForQt5.polkit-kde-agent}/libexec/polkit-kde-authentication-agent-1"
+        "${pkgs.hyprpolkitagent}/libexec/hyprpolkitagent"
         "hyprpaper"
         "hypridle"
         "waybar"
@@ -77,7 +77,7 @@
         "$mod,Q,killactive"
         "$mod_L,DELETE,exit"
         "$mod,E,exec,$fileManager"
-        "$mod,R,exec,$launcher"
+        "$mod,space,exec,$launcher"
         "$mod,X,pseudo,"
         "$mod,C,togglefloating,"
         "$mod,L,exec,hyprlock --immediate"
