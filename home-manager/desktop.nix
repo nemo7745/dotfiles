@@ -46,10 +46,9 @@
         layout = "dwindle";
         allow_tearing = false;
       };
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 4;
-      };
+      gesture = [
+        "4, horizontal, workspace"
+      ];
       decoration = {
         rounding = 0;
         blur.enabled = false;
